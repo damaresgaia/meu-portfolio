@@ -30,35 +30,88 @@ const toolboxItems = [
     title: "Github",
     iconType: GithubIcon,
   },
-]
+];
 
+const softSkills = [
+  {
+    title: "Organização",
+    emoji: "📋"
+  },
+  {
+    title: "Curiosidade",
+    emoji: "🔍"
+  },
+  {
+    title: "Comunicação",
+    emoji: "🗣️"
+  },
+  {
+    title: "Autonomia",
+    emoji: "🚀"
+  },
+  {
+    title: "Resiliência",
+    emoji: "💪"
+  },
+  {
+    title: "Empatia",
+    emoji: "❤️"
+  },
+  {
+    title: "Criatividade",
+    emoji: "🎨"
+  },
+  {
+    title: "Colaboração",
+    emoji: "🤝"
+  },
+];
 
 export const AboutSection = () => {
   return (
-    <div className="pb-96">
-      <SectionHeader
-        eyebrow="Sobre mim"
-        title="Desenvolvedora Full Stack"
-        description="Learn more about who I am, what I do, and what inspires me."
-      />
-      <div>
-        <Card>
-          <div>
-            <StarIcon />
-            <h3>My Toolbox</h3>
-            <p>
-              Explore the technologies and tools I use to craft exceptional digital experiences.
-            </p>
-          </div>
-          <div>
-            {toolboxItems.map((item) => (
-              <div key={item.title}>
-                <TechIcon component={item.iconType} />
-                <span>{item.title}</span>
-              </div>
-            ))}
-          </div>
-        </Card>
+    <div className="py-20">
+      <div className="container">
+        <SectionHeader
+          eyebrow="Sobre mim"
+          title="Desenvolvedora Full Stack"
+          description="Learn more about who I am, what I do, and what inspires me."
+        />
+        <div className="mt-20">
+          <Card>
+            <div>
+              <StarIcon />
+              <h3>My Soft Skills</h3>
+              <p>
+                Explore my interests and hobbies beyond the digital realm.
+              </p>
+            </div>
+            <div>
+              {softSkills.map((soft) => (
+                <div key={soft.title}>
+                  <span>{soft.title}</span>
+                  <span>{soft.emoji}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+          <Card>
+            <div>
+              <StarIcon />
+              <h3>My Toolbox</h3>
+              <p>
+                Explore the technologies and tools I use to craft exceptional digital experiences.
+              </p>
+            </div>
+            <div>
+              {toolboxItems.map((item) => (
+                <div key={item.title}>
+                  <TechIcon component={item.iconType} />
+                  <span>{item.title}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
       </div>
     </div>
   )
