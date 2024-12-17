@@ -8,6 +8,8 @@ import CssIcon from "@/assets/icons/css3.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import GithubIcon from "@/assets/icons/github.svg";
 import { TechIcon } from "@/components/TechIcon";
+import { CardHeader } from "@/components/CardHeader";
+import { ToolboxItems } from "@/components/ToolboxItems";
 
 const toolboxItems = [
   {
@@ -78,13 +80,10 @@ export const AboutSection = () => {
         />
         <div className="mt-20">
           <Card>
-            <div>
-              <StarIcon />
-              <h3>My Soft Skills</h3>
-              <p>
-                Explore my interests and hobbies beyond the digital realm.
-              </p>
-            </div>
+            <CardHeader
+              title="My Soft Skills"
+              description="Explore my interests and hobbies beyond the digital realm."
+            />
             <div>
               {softSkills.map((soft) => (
                 <div key={soft.title}>
@@ -95,21 +94,13 @@ export const AboutSection = () => {
             </div>
           </Card>
           <Card>
-            <div>
-              <StarIcon />
-              <h3>My Toolbox</h3>
-              <p>
-                Explore the technologies and tools I use to craft exceptional digital experiences.
-              </p>
-            </div>
-            <div>
-              {toolboxItems.map((item) => (
-                <div key={item.title}>
-                  <TechIcon component={item.iconType} />
-                  <span>{item.title}</span>
-                </div>
-              ))}
-            </div>
+            <CardHeader
+              title="My Toolbox"
+              description="Explore the technologies and tools I use to craft exceptional digital experiences."
+            />  
+            <ToolboxItems items={toolboxItems}/>
+            <ToolboxItems items={toolboxItems}/>
+            <ToolboxItems items={toolboxItems}/>
           </Card>
         </div>
       </div>
