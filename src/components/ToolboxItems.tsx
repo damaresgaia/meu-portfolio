@@ -35,6 +35,6 @@ export const ToolboxItems = ({
                     </div>
                 ))}
             </div>
-        </div >
+        </div>
     );
 };
