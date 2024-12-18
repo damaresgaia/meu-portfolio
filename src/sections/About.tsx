@@ -1,15 +1,15 @@
+"use client";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
-import StarIcon from "@/assets/icons/star.svg";
-import Image from "next/image";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
 import HTMLIcon from "@/assets/icons/html5.svg";
 import CssIcon from "@/assets/icons/css3.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import GithubIcon from "@/assets/icons/github.svg";
-import { TechIcon } from "@/components/TechIcon";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const toolboxItems = [
   {
@@ -80,6 +80,7 @@ const softSkills = [
 ];
 
 export const AboutSection = () => {
+  const constraintRef = useRef(null);
   return (
     <div className="py-20 lg:py-28">
       <div className="container">
@@ -95,19 +96,21 @@ export const AboutSection = () => {
               description="Explore my interests and hobbies beyond the digital realm."
               className="px-6 py-6"
             />
-            <div className="relative flex-1">
+            <div className="relative flex-1" ref={constraintRef}>
               {softSkills.map((soft) => (
-                <div
+                <motion.div
                   key={soft.title}
                   className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
                   style={{
                     left: soft.left,
                     top: soft.top,
                   }}
+                  drag
+                  dragConstraints={constraintRef}
                 >
                   <span className="font-medium text-gray-950">{soft.title}</span>
                   <span>{soft.emoji}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </Card>
@@ -117,11 +120,11 @@ export const AboutSection = () => {
               description="Explore the technologies and tools I use to craft exceptional digital experiences."
               className=""
             />
-            <ToolboxItems items={toolboxItems} className="" />
+            <ToolboxItems items={toolboxItems} className="" itemsWrapperClassName="animate-move-left [animation-duration:30s]"/>
             <ToolboxItems
               items={toolboxItems}
               className="mt-6"
-              itemsWrapperClassName="-translate-x-1/2"
+              itemsWrapperClassName="animate-move-right [animation-duration:15s]"
             />
           </Card>
         </div>
