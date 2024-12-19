@@ -4,15 +4,13 @@ import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import Image from 'next/image';
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-import grainImage from '@/assets/images/grain.jpg';
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
+    technologies: ["React", "Next.js", "Tailwind", "Framer Motion"],
     title: "Dark Saas Landing Page",
     results: [
       { title: "Enhanced user experience by 40%" },
@@ -23,8 +21,7 @@ const portfolioProjects = [
     image: darkSaasLandingPage,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
+    technologies: ["React", "Next.js"],
     title: "Light Saas Landing Page",
     results: [
       { title: "Boosted sales by 20%" },
@@ -35,8 +32,7 @@ const portfolioProjects = [
     image: lightSaasLandingPage,
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
+    technologies: ["React", "Next.js"],
     title: "AI Startup Landing Page",
     results: [
       { title: "Enhanced user experience by 40%" },
@@ -55,7 +51,7 @@ export const ProjectsSection = () => {
         <SectionHeader
           eyebrow="Resultados práticos"
           title="Projetos em destaque"
-          description="Veja como transformei conceitos em experiências digitais envolventes."
+          description="Veja como transformo ideias em soluções digitais criativas e funcionais."
         />
         <div className="mt-10 md:mt-20 flex flex-col gap-20">
           {portfolioProjects.map((project, projectIndex) => (
@@ -70,9 +66,12 @@ export const ProjectsSection = () => {
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
                   <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
-                    <span>{project.company}</span>
-                    <span>&bull;</span>
-                    <span>{project.year}</span>
+                    {project.technologies.map((tech, index) => (
+                      <span key={index}>
+                        {tech}
+                        {index < project.technologies.length - 1 && " • "}
+                      </span>
+                    ))}
                   </div>
                   <h3 className="font-serif text-2xl mt-2 md:mt-5 md:text-4xl">{project.title}</h3>
                   <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
