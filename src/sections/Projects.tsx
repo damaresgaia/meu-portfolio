@@ -1,4 +1,4 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
+import portfolio from "@/assets/images/portfolio.png";
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import Image from 'next/image';
@@ -10,15 +10,16 @@ import { Card } from "@/components/Card";
 
 const portfolioProjects = [
   {
-    technologies: ["React", "Next.js", "Tailwind", "Framer Motion"],
-    title: "Dark Saas Landing Page",
+    technologies: ["React", "Next.js", "Tailwind"],
+    title: "Meu Portfólio Pessoal",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Destaque para projetos mais relevantes" },
+      { title: "Design responsivo para todos os dispositivos" },
+      { title: "Performance otimizada com Next.js" },
     ],
     link: "https://youtu.be/4k7IdSLxh6w",
-    image: darkSaasLandingPage,
+    repoLink: "https://github.com/damaresgaia/meu-portfolio",
+    image: portfolio,
   },
   {
     technologies: ["React", "Next.js"],
@@ -29,6 +30,7 @@ const portfolioProjects = [
       { title: "Increased brand awareness by 15%" },
     ],
     link: "https://youtu.be/7hi5zwO75yc",
+    repoLink: "https://github.com/seu-usuario/seu-repositorio",
     image: lightSaasLandingPage,
   },
   {
@@ -40,6 +42,7 @@ const portfolioProjects = [
       { title: "Increased mobile traffic by 35%" },
     ],
     link: "https://youtu.be/Z7I5uSRHMHg",
+    repoLink: "https://github.com/seu-usuario/seu-repositorio",
     image: aiStartupLandingPage,
   },
 ];
@@ -89,12 +92,18 @@ export const ProjectsSection = () => {
                       <ArrowUpRightIcon className="size-4" />
                     </button>
                   </a>
+                  <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
+                    <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:ml-4">
+                      <span>Repositório</span>
+                      <ArrowUpRightIcon className="size-4" />
+                    </button>
+                  </a>
                 </div>
                 <div className="relative">
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none rounded-lg"
                   />
                 </div>
               </div>
