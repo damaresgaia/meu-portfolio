@@ -1,6 +1,7 @@
 import memojiImage from "@/assets/images/memoji-computer.png";
 import Image from "next/image";
-import ArrowDow from "@/assets/icons/arrow-down.svg";
+import Linkedin from "@/assets/icons/linkedin.svg";
+import Github from "@/assets/icons/github.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
@@ -34,7 +35,7 @@ export const HeroSection = () => {
         <HeroOrbit size={530} rotation={178} shouldOrbit orbitDuration="38s" shouldSpin spinDuration="3s">
           <SparkleIcon className="size-10 text-emerald-300/20" />
         </HeroOrbit>
-        <HeroOrbit size={550} rotation={20}  shouldOrbit orbitDuration="40s" shouldSpin spinDuration="6s">
+        <HeroOrbit size={550} rotation={20} shouldOrbit orbitDuration="40s" shouldSpin spinDuration="6s">
           <StarIcon className="size-12 text-emerald-300" />
         </HeroOrbit>
         <HeroOrbit size={550} rotation={20} shouldOrbit orbitDuration="42s" shouldSpin spinDuration="3s">
@@ -80,16 +81,28 @@ export const HeroSection = () => {
             Apaixonada por criar soluções inovadoras e funcionais, combinando design intuitivo no front-end e eficiência robusta no back-end.
           </p>
         </div>
+
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-          <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
-            <span className="font-semibold">Explore meu trabalho</span>
-            <ArrowDow className="size-4" />
-          </button>
-          <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl">
-            <span>👋</span>
-            <span className="font-semibold">Vamos conectar</span>
-          </button>
+          <a
+            href="https://github.com/damaresgaia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl z-10"
+          >
+            <span className="font-semibold">GitHub</span>
+            <Github className="size-4" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/damaresgaia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl z-10"
+          >
+            <span className="font-semibold">LinkedIn</span>
+            <Linkedin className="size-4" />
+          </a>
         </div>
+
       </div>
     </div>
   );
