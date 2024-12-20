@@ -6,6 +6,12 @@ import HTMLIcon from "@/assets/icons/html5.svg";
 import CssIcon from "@/assets/icons/css3.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import GithubIcon from "@/assets/icons/github.svg";
+import JavaIcon from "@/assets/icons/java.svg";
+import SpringIcon from "@/assets/icons/spring.svg";
+import NodeIcon from "@/assets/icons/node.svg";
+import MysqlIcon from "@/assets/icons/mysql.svg";
+import DockerIcon from "@/assets/icons/docker.svg";
+import AwsIcon from "@/assets/icons/aws.svg";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
 import { motion } from "framer-motion";
@@ -31,6 +37,30 @@ const toolboxItems = [
   {
     title: "Github",
     iconType: GithubIcon,
+  },
+  {
+    title: "Java",
+    iconType: JavaIcon,
+  },
+  {
+    title: "Node.Js",
+    iconType: NodeIcon,
+  },
+  {
+    title: "MySQL",
+    iconType: MysqlIcon,
+  },
+  {
+    title: "Docker",
+    iconType: DockerIcon,
+  },
+  {
+    title: "Spring",
+    iconType: SpringIcon,
+  },
+  {
+    title: "AWS",
+    iconType: AwsIcon,
   },
 ];
 
@@ -92,7 +122,7 @@ export const AboutSection = () => {
         <div className="mt-20 flex flex-col gap-8">
           <Card className="h-[320px]">
             <CardHeader
-              title="Tecnologias"
+              title="Hard Skills"
               description="Descubra as tecnologias e ferramentas que utilizo nos meus projetos."
               className=""
             />
