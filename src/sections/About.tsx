@@ -87,13 +87,26 @@ export const AboutSection = () => {
         <SectionHeader
           eyebrow="Sobre mim"
           title="Desenvolvedora Full Stack"
-          description="Learn more about who I am, what I do, and what inspires me."
+          description="Estou sempre em busca de aprender e evoluir, crescendo de forma profissional e pessoal."
         />
         <div className="mt-20 flex flex-col gap-8">
+          <Card className="h-[320px]">
+            <CardHeader
+              title="Tecnologias"
+              description="Descubra as tecnologias e ferramentas que utilizo nos meus projetos."
+              className=""
+            />
+            <ToolboxItems items={toolboxItems} className="" itemsWrapperClassName="animate-move-left [animation-duration:30s]" />
+            <ToolboxItems
+              items={toolboxItems}
+              className="mt-6"
+              itemsWrapperClassName="animate-move-right [animation-duration:15s]"
+            />
+          </Card>
           <Card className="h-[320px] p-0 flex flex-col">
             <CardHeader
-              title="My Soft Skills"
-              description="Explore my interests and hobbies beyond the digital realm."
+              title="Soft Skills"
+              description="Conheça minhas habilidades interpessoais."
               className="px-6 py-6"
             />
             <div className="relative flex-1" ref={constraintRef}>
@@ -113,19 +126,6 @@ export const AboutSection = () => {
                 </motion.div>
               ))}
             </div>
-          </Card>
-          <Card className="h-[320px]">
-            <CardHeader
-              title="My Toolbox"
-              description="Explore the technologies and tools I use to craft exceptional digital experiences."
-              className=""
-            />
-            <ToolboxItems items={toolboxItems} className="" itemsWrapperClassName="animate-move-left [animation-duration:30s]"/>
-            <ToolboxItems
-              items={toolboxItems}
-              className="mt-6"
-              itemsWrapperClassName="animate-move-right [animation-duration:15s]"
-            />
           </Card>
         </div>
       </div>
